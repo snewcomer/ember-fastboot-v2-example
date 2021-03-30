@@ -1,0 +1,41 @@
+#!/usr/bin/env node
+
+'use strict';
+
+// HI :wave
+const path = require('path');
+
+const ClusterMaster = require('ember-alt-fastboot-app-server/src/backing-classes/cluster-master');
+const serialize = require('ember-alt-fastboot-app-server/src/utils/serialization').serialize;
+
+const config = {
+  distPath: path.join(__dirname, '../'),
+  host: '0.0.0.0',
+  port: '4200',
+  workerCount: 1,
+  buildSandboxGlobals(globals) {
+    return Object.assign({}, globals, {
+      process
+    });
+  }
+};
+
+class CustomClusterMaster extends ClusterMaster {
+  clusterSetupMaster() {
+    const workerOptions = {
+      distPath: this.distPath,
+      host: this.host,
+      port: this.port,
+      buildSandboxGlobals: this.buildSandboxGlobals,
+    };
+
+    return {
+      exec: path.join(__dirname, './cluster-worker.js'),
+      args: [serialize(workerOptions)]
+    };
+  }
+}
+
+const master = new CustomClusterMaster(config);
+
+master.start();

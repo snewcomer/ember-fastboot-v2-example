@@ -5,6 +5,8 @@
 // HI :wave
 const path = require('path');
 
+// in v2, instead of FastBootAppServer as your means to customize, we provide ClusterMaster
+// TODO: change name: FastBootV2AppServer?
 const ClusterMaster = require('ember-alt-fastboot-app-server/src/backing-classes/cluster-master');
 const serialize = require('ember-alt-fastboot-app-server/src/utils/serialization').serialize;
 
@@ -29,6 +31,7 @@ class CustomClusterMaster extends ClusterMaster {
       buildSandboxGlobals: this.buildSandboxGlobals,
     };
 
+    // How does this API look?
     return {
       exec: path.join(__dirname, './cluster-worker.js'),
       args: [serialize(workerOptions)]

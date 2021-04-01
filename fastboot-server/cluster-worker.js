@@ -12,4 +12,3 @@ require('./middlewares/hi')(worker);
 
 worker.start();
 
-

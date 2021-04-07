@@ -16,6 +16,7 @@
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "ember serve",
+    "start:production": "EXPERIMENTAL_RENDER_MODE_SERIALIZE=true ember server --prod",
     "test": "npm-run-all lint:* test:*",
     "test:ember": "ember test"
   },

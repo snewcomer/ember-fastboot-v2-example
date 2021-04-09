@@ -53,12 +53,12 @@
     "qunit-dom": "^1.2.0"
   },
   "engines": {
-    "node": "10.* || >= 12"
+    "node": ">= 12"
   },
   "ember": {
     "edition": "octane"
   },
   "dependencies": {
-    "ember-cli-integrated-fastboot": "0.0.4"
+    "ember-cli-integrated-fastboot": "0.0.5"
   }
 }

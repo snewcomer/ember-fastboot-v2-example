@@ -59,6 +59,6 @@
     "edition": "octane"
   },
   "dependencies": {
-    "ember-cli-integrated-fastboot": "0.0.5"
+    "ember-cli-integrated-fastboot": "0.0.6"
   }
 }

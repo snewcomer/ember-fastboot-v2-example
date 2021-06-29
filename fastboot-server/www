@@ -6,7 +6,7 @@ const path = require('path');
 
 // in v2, instead of FastBootAppServer as your means to customize, we provide FastBootServer
 // TODO: change name: FastBootV2AppServer?
-const FastBootServer = require('ember-alt-fastboot-app-server/src/backing-classes/cluster-master');
+const FastBootServer = require('ember-alt-fastboot-app-server/src/backing-classes/fastboot-server');
 const serialize = require('ember-alt-fastboot-app-server/src/utils/serialization').serialize;
 
 const config = {

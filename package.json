@@ -59,7 +59,7 @@
     "edition": "octane"
   },
   "dependencies": {
-    "ember-cli-integrated-fastboot": "0.0.6"
+    "ember-cli-integrated-fastboot": "0.0.8"
   },
   "volta": {
     "node": "14.17.1"

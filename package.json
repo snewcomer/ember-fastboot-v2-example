@@ -60,5 +60,8 @@
   },
   "dependencies": {
     "ember-cli-integrated-fastboot": "0.0.6"
+  },
+  "volta": {
+    "node": "14.17.1"
   }
 }
